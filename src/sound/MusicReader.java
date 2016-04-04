@@ -4,7 +4,7 @@ import java.io.*;
 public class MusicReader {
     
     private String file;
-    private String path = "\\Users\\John\\Desktop\\Grad School\\2 SENG 6245 - Software Construction\\ABC Music Player\\sample_abc\\";
+    private String path = "sample_abc/";
     private String line = null;
     private StringBuilder total = new StringBuilder();
     

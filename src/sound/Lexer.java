@@ -1,6 +1,7 @@
 package sound;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.*;
 import java.io.IOException;
 
 public class Lexer {
@@ -13,7 +14,7 @@ public class Lexer {
             "(C\\s*:[^\n]+\n)" + "|" + //Composer name
             "(M\\s*:\\s*C+\n|[0-9]+/[0-9]+\n)" + "|" + //Meter
             "(Q\\s*:\\s*[0-9]+\n)" + "|" + //Tempo
-            "(L\\s*:\\s*[0-9]+/[0-9]+\n)" + "|" + //Default length
+            "(L\\s*:\\s*[0-9]+/[0-9]+\n)" + "|" + //Default Note Length
             "(K\\s*:\\s*[a-gA-G][#b]?m?\n)" + "|" + //Key
             "(z([0-9]*/[0-9]*|[0-9]+)?)" + "|" + //Rest
             "((" + note + ")\\s*)" + "|" + //Note
@@ -22,17 +23,20 @@ public class Lexer {
             ;
     private Pattern pattern;
     private Matcher matcher; 
+    private List<String> List = new ArrayList<String>();
     
     public Lexer (String input) {
         this.input = input;
     }
     
-    public void Search() throws IOException {
+    public List<String> searchAdd() throws IOException {
         String music = new MusicReader(input).readMusic();
         pattern = Pattern.compile(searchValue);
         matcher = pattern.matcher(music);
         while (matcher.find()){
-            System.out.println(matcher.group());
+            List.add(matcher.group());
         }
+        return List;
     }
+    
 }
