@@ -1,7 +1,6 @@
 package sound;
 
 public enum Type {
-
     Field_Number,
     Field_Title,
     Composer_Name,
