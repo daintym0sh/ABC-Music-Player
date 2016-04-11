@@ -17,7 +17,7 @@ import javax.sound.midi.MidiUnavailableException;
  *of Token objects to create a SequencePlayer that can play the contents of the .abc file.
  *Parser also takes in an int value equal to the resolution of a tick value in the SequencePlayer.
  * 
- * @author John Meier
+ * @author - John Meier
  */
 public class Parser {
 
@@ -35,10 +35,8 @@ public class Parser {
     /**
      * Constructs and initializes a Parser objects.
      * 
-     * @param piece
-     * The name of the 'abc' file to be parsed by the Parser objects.
-     * @param resolution
-     * The resolution of a tick value in the SequencePlayer.
+     * @param piece - The name of the 'abc' file to be parsed by the Parser objects
+     * @param resolution - The resolution of a tick value in the SequencePlayer
      */
     public Parser(String piece, int resolution){
         this.piece = piece;
@@ -48,10 +46,12 @@ public class Parser {
     /**
      * Adds notes to the SequencePlayer, player, based of the Token objects.
      * 
-     * @return
-     * The return value is a SequencePlayer object that contains playable notes from the .abc file.
+     * @return a SequencePlayer object that contains playable notes from the .abc file
+     * @throws IOException 
+     * @throws InvalidMidiDataException 
+     * @throws MidiUnavailableException 
      */
-    public SequencePlayer parse() throws IOException, MidiUnavailableException, InvalidMidiDataException{
+    public SequencePlayer parse() throws IOException, MidiUnavailableException, InvalidMidiDataException {
         //List of body terms from the .abc file
         list = new Lexer(piece).searchBody();
         //List of header terms from the .abc file
