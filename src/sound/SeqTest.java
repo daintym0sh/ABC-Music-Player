@@ -3,9 +3,12 @@ package sound;
 import static org.junit.Assert.*;
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;
-
 import org.junit.Test;
-
+/**
+ * SeqTest hard codes tests piece1.abc and tests code for correctness
+ * 
+ * @author John
+ */
 public class SeqTest {
 
     @Test

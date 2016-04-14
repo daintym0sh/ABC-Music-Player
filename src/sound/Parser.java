@@ -6,10 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;
-
 /**
  *Parser constructs a SequencePlayer object based off from an .abc file.
  *
@@ -17,7 +15,7 @@ import javax.sound.midi.MidiUnavailableException;
  *of Token objects to create a SequencePlayer that can play the contents of the .abc file.
  *Parser also takes in an int value equal to the resolution of a tick value in the SequencePlayer.
  * 
- * @author - John Meier
+ * @author John Meier
  */
 public class Parser {
 

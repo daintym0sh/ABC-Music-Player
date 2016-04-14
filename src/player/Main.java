@@ -7,12 +7,15 @@ import javax.sound.midi.MidiUnavailableException;
 import sound.Parser;
 
 /**
- * Main entry point of your application.
+ * Main entry point of the .abc music player application.
+ * 
+ * @author John Meier
  */
 public class Main {
 
 	/**
 	 * Plays the input file using Java MIDI API.
+	 * 
 	 * @throws InvalidMidiDataException 
 	 * @throws IOException 
 	 * @throws MidiUnavailableException 	 * 

@@ -3,7 +3,11 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.*;
 import java.io.IOException;
-
+/**
+ * Lexer reads in a String that corresponds to an .abc file, reads in the file, and adds each term to a List<String>
+ * 
+ * @author John
+ */
 public class Lexer {
     private String input;
     private String music;
@@ -36,11 +40,19 @@ public class Lexer {
     private Matcher matcherHead; 
     private List<String> bodyList = new ArrayList<String>();
     private List<String> headerList = new ArrayList<String>();
-    
+    /**
+     * Constructs and initializes Lexer objects
+     * @param input - a String that corresponds to the name of an .abc file, including the file extension
+     */
     public Lexer(String input){
         this.input = input;
     }
-    
+    /**
+     * Searches and adds header terms to a List<String>
+     * 
+     * @return a List<String> of header terms
+     * @throws IOException
+     */
     public List<String> searchHeader() throws IOException{
         music = new MusicReader(input).readMusic();
         pattern = Pattern.compile(headerValue);
@@ -50,7 +62,12 @@ public class Lexer {
         }
         return headerList;
     }
-    
+    /**
+     * Searches and adds body terms to a List<String>
+     * 
+     * @return a List<String> of body terms
+     * @throws IOException
+     */
     public List<String> searchBody() throws IOException{
         music = new MusicReader(input).readMusic();
         pattern = Pattern.compile(searchValue);

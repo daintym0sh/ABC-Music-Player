@@ -5,7 +5,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * MusicData reads in a List<String> of body terms from an .abc file and adds each term to an ArrayList of Token objects
+ * 
+ * @author John
+ */
 public class MusicData{
     
     private Token token;
@@ -16,11 +20,19 @@ public class MusicData{
     private Matcher matcher;
     private Type type;
     private String value;
-    
+    /**
+     * Constructs and initializes MusicData objects.
+     * 
+     * @param bodyList - a List<String> of body terms from an .abc file
+     */
     public MusicData(List<String> bodyList){
         this.bodyList = bodyList;
     }
-    
+    /**
+     * Makes Token objects out of the elements of the List<String> bodyList
+     * 
+     * @return an ArrayList of token objects
+     */
     public ArrayList<Token> loadData(){
         it = bodyList.iterator();
         while(it.hasNext()){

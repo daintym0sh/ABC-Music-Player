@@ -5,7 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;
-
+/**
+ * MusicDataTest tests the functionality of the MusicData class
+ * 
+ * @author John
+ */
 public class MusicDataTest {
     public static void main(String args[]) throws IOException, MidiUnavailableException, InvalidMidiDataException{
         List<String> List = new Lexer("piece1.abc").searchBody();
